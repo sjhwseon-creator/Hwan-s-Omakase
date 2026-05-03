@@ -258,17 +258,28 @@
 
     renderMenus();
     updateSummary();
+
+  <script>
+    function copyOrder() {
+    // 기존 코드
+    }
+
+    function resetOrder() {
+    // 기존 코드
+    }
+
+  // 👉 여기 아래에 추가
+    function sendToWhatsApp() {
+      const text = document.getElementById("orderSummary").textContent;
+
+      if (text === "선택된 메뉴가 없습니다.") {
+        alert("먼저 메뉴 수량을 선택해주세요.");
+        return;
+      }
+
+      const url = "https://wa.me/?text=" + encodeURIComponent(text);
+      window.open(url, "_blank");
+    }
   </script>
-  function sendToWhatsApp() {
-  const text = document.getElementById("orderSummary").textContent;
-
-  if (text === "선택된 메뉴가 없습니다.") {
-    alert("먼저 메뉴 수량을 선택해주세요.");
-    return;
-  }
-
-  const url = "https://wa.me/?text=" + encodeURIComponent(text);
-  window.open(url, "_blank");
-}
 </body>
 </html>

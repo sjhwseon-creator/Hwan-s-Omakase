@@ -261,14 +261,13 @@
 
   <script>
     function copyOrder() {
-    // 기존 코드
+      // 기존 코드
     }
 
     function resetOrder() {
-    // 기존 코드
+      // 기존 코드
     }
 
-  // 👉 여기 아래에 추가
     function sendToWhatsApp() {
       const text = document.getElementById("orderSummary").textContent;
 
@@ -280,6 +279,11 @@
       const url = "https://wa.me/?text=" + encodeURIComponent(text);
       window.open(url, "_blank");
     }
+
+    // 👉 이건 여기 안에 있어야 함
+    updateSummary();
   </script>
+</body>
+</html>
 </body>
 </html>
